@@ -4527,7 +4527,7 @@ extern __attribute__((nonreentrant)) void _delay3(unsigned char);
 # 32 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\xc.h" 2 3
 # 11 "ECU_layer/LED/../../MCAL_layer/GPIO/../compiler.h" 2
 # 12 "ECU_layer/LED/../../MCAL_layer/GPIO/../mcal_std_types.h" 2
-# 29 "ECU_layer/LED/../../MCAL_layer/GPIO/../mcal_std_types.h"
+# 30 "ECU_layer/LED/../../MCAL_layer/GPIO/../mcal_std_types.h"
 typedef unsigned char uint8;
 typedef unsigned short uint16;
 typedef unsigned int uint32;
@@ -4540,7 +4540,10 @@ typedef uint8 Std_ReturnType;
 
 # 1 "ECU_layer/LED/../../MCAL_layer/GPIO/../../MCAL_layer/devic_config.h" 1
 # 15 "ECU_layer/LED/../../MCAL_layer/GPIO/hal_gpio.h" 2
-# 29 "ECU_layer/LED/../../MCAL_layer/GPIO/hal_gpio.h"
+
+# 1 "ECU_layer/LED/../../MCAL_layer/GPIO/hal_gpio_cfg.h" 1
+# 16 "ECU_layer/LED/../../MCAL_layer/GPIO/hal_gpio.h" 2
+# 33 "ECU_layer/LED/../../MCAL_layer/GPIO/hal_gpio.h"
 typedef enum {
     LOW = 0,
     HIGH
@@ -4580,10 +4583,11 @@ typedef struct {
 
 
 Std_ReturnType gpio_pin_direction_intialize(const pin_config_t *_pin_config);
-Std_ReturnType gpio_pin_get_dirction_status(const pin_config_t *_pin_config, direction_t dic_status);
+Std_ReturnType gpio_pin_get_dirction_status(const pin_config_t *_pin_config, direction_t *dic_status);
 Std_ReturnType gpio_pin_write_logic(const pin_config_t *_pin_config, logic_t logic);
-Std_ReturnType gpio_pin_read_logic(const pin_config_t *_pin_config, logic_t logic);
+Std_ReturnType gpio_pin_read_logic(const pin_config_t *_pin_config, logic_t *logic);
 Std_ReturnType gpio_pin_toggle_logic(const pin_config_t *_pin_config);
+Std_ReturnType gpio_pin_initialize(const pin_config_t *_pin_config);
 
 Std_ReturnType gpio_port_direction_intialize(port_index_t port, uint8 direction);
 Std_ReturnType gpio_port_get_direction_status(port_index_t port, uint8 *direction_status);

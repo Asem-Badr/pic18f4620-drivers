@@ -3,6 +3,24 @@
 [d edition pro ]
 [d chip 18F4620 ]
 [d frameptr 4065 ]
+"32 E:\diploma\projects\MCAL_layer/GPIO/hal_gpio.c
+[e E2761 . `uc
+GPIO_DIRECTION_OUTPUT 0
+GPIO_DIRECTION_INPUT 1
+]
+"59
+[e E2757 . `uc
+LOW 0
+HIGH 1
+]
+"138
+[e E2775 . `uc
+PORTA_INDEX 0
+PORTB_INDEX 1
+PORTC_INDEX 2
+PORTD_INDEX 3
+PORTE_INDEX 4
+]
 "12 E:\diploma\projects\application.c
 [e E2775 . `uc
 PORTA_INDEX 0
@@ -29,26 +47,10 @@ GPIO_DIRECTION_INPUT 1
 LOW 0
 HIGH 1
 ]
-"30 E:\diploma\projects\MCAL_layer/GPIO/hal_gpio.c
-[e E2761 . `uc
-GPIO_DIRECTION_OUTPUT 0
-GPIO_DIRECTION_INPUT 1
-]
-"45
-[e E2757 . `uc
-LOW 0
-HIGH 1
-]
-"64
-[e E2775 . `uc
-PORTA_INDEX 0
-PORTB_INDEX 1
-PORTC_INDEX 2
-PORTD_INDEX 3
-PORTE_INDEX 4
-]
-"18 E:\diploma\projects\application.c
+"32
 [v _main main `(i  1 e 2 0 ]
+"45
+[v _application_initialize application_initialize `(v  1 e 1 0 ]
 "4 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\fleq.c
 [v ___fleq __fleq `(b  1 e 0 0 ]
 "62 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\float.c
@@ -73,16 +75,39 @@ PORTE_INDEX 4
 [v ___lmul __lmul `(ul  1 e 4 0 ]
 "91 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\Umul64.c
 [v ___omul __omul `(uo  1 e 8 0 ]
-"17 E:\diploma\projects\MCAL_layer/GPIO/hal_gpio.c
+"19 E:\diploma\projects\MCAL_layer/GPIO/hal_gpio.c
 [v _gpio_pin_direction_intialize gpio_pin_direction_intialize `(uc  1 e 1 0 ]
-[s S24 . 1 `uc 1 port 1 0 :3:0 
-`uc 1 pin 1 0 :3:3 
-`uc 1 direction 1 0 :1:6 
-`uc 1 logic 1 0 :1:7 
-]
-"12 E:\diploma\projects\application.c
-[v _led_1 led_1 `S24  1 e 1 0 ]
-"1380 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4620.h
+"59
+[v _gpio_pin_write_logic gpio_pin_write_logic `(uc  1 e 1 0 ]
+"138
+[v _gpio_port_direction_intialize gpio_port_direction_intialize `(uc  1 e 1 0 ]
+"168
+[v _gpio_port_write_logic gpio_port_write_logic `(uc  1 e 1 0 ]
+"199
+[v _gpio_port_toggle_logic gpio_port_toggle_logic `(uc  1 e 1 0 ]
+"30 E:\diploma\projects\application.c
+[v _ret ret `uc  1 e 1 0 ]
+"52 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4620.h
+[v _PORTA PORTA `VEuc  1 e 1 @3968 ]
+"189
+[v _PORTB PORTB `VEuc  1 e 1 @3969 ]
+"360
+[v _PORTC PORTC `VEuc  1 e 1 @3970 ]
+"535
+[v _PORTD PORTD `VEuc  1 e 1 @3971 ]
+"677
+[v _PORTE PORTE `VEuc  1 e 1 @3972 ]
+"880
+[v _LATA LATA `VEuc  1 e 1 @3977 ]
+"992
+[v _LATB LATB `VEuc  1 e 1 @3978 ]
+"1104
+[v _LATC LATC `VEuc  1 e 1 @3979 ]
+"1216
+[v _LATD LATD `VEuc  1 e 1 @3980 ]
+"1328
+[v _LATE LATE `VEuc  1 e 1 @3981 ]
+"1380
 [v _TRISA TRISA `VEuc  1 e 1 @3986 ]
 "1602
 [v _TRISB TRISB `VEuc  1 e 1 @3987 ]
@@ -94,19 +119,49 @@ PORTE_INDEX 4
 [v _TRISE TRISE `VEuc  1 e 1 @3990 ]
 "9 E:\diploma\projects\MCAL_layer/GPIO/hal_gpio.c
 [v _tris_registers tris_registers `[5]*.39VEuc  1 e 10 0 ]
-"18 E:\diploma\projects\application.c
+"10
+[v _lat_registers lat_registers `[5]*.39VEuc  1 e 10 0 ]
+"11
+[v _port_registers port_registers `[5]*.39VEuc  1 e 10 0 ]
+"32 E:\diploma\projects\application.c
 [v _main main `(i  1 e 2 0 ]
 {
-"26
+"44
 } 0
-"17 E:\diploma\projects\MCAL_layer/GPIO/hal_gpio.c
-[v _gpio_pin_direction_intialize gpio_pin_direction_intialize `(uc  1 e 1 0 ]
+"199 E:\diploma\projects\MCAL_layer/GPIO/hal_gpio.c
+[v _gpio_port_toggle_logic gpio_port_toggle_logic `(uc  1 e 1 0 ]
 {
-[s S24 . 1 `uc 1 port 1 0 :3:0 
-`uc 1 pin 1 0 :3:3 
-`uc 1 direction 1 0 :1:6 
-`uc 1 logic 1 0 :1:7 
-]
-[v gpio_pin_direction_intialize@_pin_config _pin_config `*.39CS24  1 p 2 0 ]
-"33
+[v gpio_port_toggle_logic@port port `E2775  1 a 1 wreg ]
+[v gpio_port_toggle_logic@port port `E2775  1 a 1 wreg ]
+[v gpio_port_toggle_logic@port port `E2775  1 a 1 3 ]
+"207
+} 0
+"45 E:\diploma\projects\application.c
+[v _application_initialize application_initialize `(v  1 e 1 0 ]
+{
+"48
+} 0
+"168 E:\diploma\projects\MCAL_layer/GPIO/hal_gpio.c
+[v _gpio_port_write_logic gpio_port_write_logic `(uc  1 e 1 0 ]
+{
+[v gpio_port_write_logic@port port `E2775  1 a 1 wreg ]
+"169
+[v gpio_port_write_logic@ret ret `uc  1 a 1 3 ]
+"168
+[v gpio_port_write_logic@port port `E2775  1 a 1 wreg ]
+[v gpio_port_write_logic@logic logic `uc  1 p 1 0 ]
+[v gpio_port_write_logic@port port `E2775  1 a 1 4 ]
+"176
+} 0
+"138
+[v _gpio_port_direction_intialize gpio_port_direction_intialize `(uc  1 e 1 0 ]
+{
+[v gpio_port_direction_intialize@port port `E2775  1 a 1 wreg ]
+"139
+[v gpio_port_direction_intialize@ret ret `uc  1 a 1 3 ]
+"138
+[v gpio_port_direction_intialize@port port `E2775  1 a 1 wreg ]
+[v gpio_port_direction_intialize@direction direction `uc  1 p 1 0 ]
+[v gpio_port_direction_intialize@port port `E2775  1 a 1 4 ]
+"146
 } 0

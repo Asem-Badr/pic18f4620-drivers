@@ -4530,7 +4530,7 @@ extern __attribute__((nonreentrant)) void _delay3(unsigned char);
 # 32 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\xc.h" 2 3
 # 11 "./ECU_layer/LED/../../MCAL_layer/GPIO/../compiler.h" 2
 # 12 "./ECU_layer/LED/../../MCAL_layer/GPIO/../mcal_std_types.h" 2
-# 29 "./ECU_layer/LED/../../MCAL_layer/GPIO/../mcal_std_types.h"
+# 30 "./ECU_layer/LED/../../MCAL_layer/GPIO/../mcal_std_types.h"
 typedef unsigned char uint8;
 typedef unsigned short uint16;
 typedef unsigned int uint32;
@@ -4543,7 +4543,10 @@ typedef uint8 Std_ReturnType;
 
 # 1 "./ECU_layer/LED/../../MCAL_layer/GPIO/../../MCAL_layer/devic_config.h" 1
 # 15 "./ECU_layer/LED/../../MCAL_layer/GPIO/hal_gpio.h" 2
-# 29 "./ECU_layer/LED/../../MCAL_layer/GPIO/hal_gpio.h"
+
+# 1 "./ECU_layer/LED/../../MCAL_layer/GPIO/hal_gpio_cfg.h" 1
+# 16 "./ECU_layer/LED/../../MCAL_layer/GPIO/hal_gpio.h" 2
+# 33 "./ECU_layer/LED/../../MCAL_layer/GPIO/hal_gpio.h"
 typedef enum {
     LOW = 0,
     HIGH
@@ -4583,10 +4586,11 @@ typedef struct {
 
 
 Std_ReturnType gpio_pin_direction_intialize(const pin_config_t *_pin_config);
-Std_ReturnType gpio_pin_get_dirction_status(const pin_config_t *_pin_config, direction_t dic_status);
+Std_ReturnType gpio_pin_get_dirction_status(const pin_config_t *_pin_config, direction_t *dic_status);
 Std_ReturnType gpio_pin_write_logic(const pin_config_t *_pin_config, logic_t logic);
-Std_ReturnType gpio_pin_read_logic(const pin_config_t *_pin_config, logic_t logic);
+Std_ReturnType gpio_pin_read_logic(const pin_config_t *_pin_config, logic_t *logic);
 Std_ReturnType gpio_pin_toggle_logic(const pin_config_t *_pin_config);
+Std_ReturnType gpio_pin_initialize(const pin_config_t *_pin_config);
 
 Std_ReturnType gpio_port_direction_intialize(port_index_t port, uint8 direction);
 Std_ReturnType gpio_port_get_direction_status(port_index_t port, uint8 *direction_status);
@@ -4595,6 +4599,8 @@ Std_ReturnType gpio_port_read_logic(port_index_t port, uint8 *logic);
 Std_ReturnType gpio_port_toggle_logic(port_index_t port);
 # 11 "./ECU_layer/LED/ecu_led.h" 2
 # 12 "./application.h" 2
+# 21 "./application.h"
+void application_initialize(void);
 # 9 "application.c" 2
 
 
@@ -4603,14 +4609,36 @@ pin_config_t led_1 ={
     .port = PORTC_INDEX,
     .pin = PIN0,
     .direction = GPIO_DIRECTION_OUTPUT,
+    .logic = HIGH
+};
+pin_config_t led_2 ={
+    .port = PORTC_INDEX,
+    .pin = PIN1,
+    .direction = GPIO_DIRECTION_OUTPUT,
     .logic = LOW
 };
+pin_config_t led_3 ={
+    .port = PORTC_INDEX,
+    .pin = PIN2,
+    .direction = GPIO_DIRECTION_OUTPUT,
+    .logic = LOW
+};
+Std_ReturnType ret = (Std_ReturnType)0x00;
+direction_t led_1_st;
 int main() {
-    gpio_pin_direction_intialize(&led_1);
 
+
+    application_initialize();
     while(1){
+
+        gpio_port_toggle_logic(PORTC_INDEX);
+        _delay((unsigned long)((250)*(16000000/4000.0)));
 
     }
 
     return (0);
+}
+void application_initialize(void){
+    ret = gpio_port_direction_intialize(PORTC_INDEX , 0x00);
+    ret = gpio_port_write_logic(PORTC_INDEX , 0xAA);
 }
