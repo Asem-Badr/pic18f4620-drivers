@@ -532,7 +532,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :U 274 ]
 {
 "24
-[; ;MCAL_layer/GPIO/hal_gpio.c: 24:         switch (_pin_config->direction) {
+[; ;MCAL_layer/GPIO/hal_gpio.c: 24:         switch (_pin_config -> direction) {
 [e $U 277  ]
 {
 "25

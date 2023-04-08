@@ -21,7 +21,7 @@ Std_ReturnType gpio_pin_direction_intialize(const pin_config_t *_pin_config) {
     if (NULL == _pin_config || _pin_config ->pin > PORT_PIN_MAX_NUMBER - 1) {
         ret = E_NOT_OK;
     } else {
-        switch (_pin_config->direction) {
+        switch (_pin_config -> direction) {
             case GPIO_DIRECTION_OUTPUT:
                 CLEAR_BIT(*tris_registers[_pin_config->port], _pin_config ->pin);
                 break;

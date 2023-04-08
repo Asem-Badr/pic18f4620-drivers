@@ -7,35 +7,36 @@
 
 
 #include "application.h"
-
-
-pin_config_t led_1 ={
-    .port = PORTC_INDEX, 
+led_t led_1 = {
+    .port = PORTC_INDEX,
     .pin = PIN0,
-    .direction = GPIO_DIRECTION_OUTPUT,
-    .logic = HIGH
+    .led_status = LED_ON
 };
-pin_config_t led_2 ={
-    .port = PORTC_INDEX, 
+led_t led_2 = {
+    .port = PORTC_INDEX,
     .pin = PIN1,
-    .direction = GPIO_DIRECTION_OUTPUT,
-    .logic = LOW
+    .led_status = LED_ON
 };
-pin_config_t led_3 ={
-    .port = PORTC_INDEX, 
+led_t led_3 = {
+    .port = PORTC_INDEX,
     .pin = PIN2,
-    .direction = GPIO_DIRECTION_OUTPUT,
-    .logic = LOW
+    .led_status = LED_ON
 };
+led_t led_4 = {
+    .port = PORTC_INDEX,
+    .pin = PIN3,
+    .led_status = LED_ON
+};
+
+
 Std_ReturnType ret = E_NOT_OK;
-direction_t led_1_st;
 int main() {
     
-    //ret = gpio_pin_direction_intialize(NULL);
     application_initialize();
     while(1){
-        //gpio_pin_toggle_logic(&led_1);
-        gpio_port_toggle_logic(PORTC_INDEX);
+        led_turn_on(&led_1);
+        __delay_ms(250);
+        led_turn_off(&led_1);
         __delay_ms(250);
       
     }
@@ -43,6 +44,8 @@ int main() {
     return (EXIT_SUCCESS);
 }
 void application_initialize(void){
-    ret = gpio_port_direction_intialize(PORTC_INDEX , 0x00);
-    ret = gpio_port_write_logic(PORTC_INDEX , 0xAA);
+    ret = led_initialize(&led_1);
+    ret = led_initialize(&led_2);
+    ret = led_initialize(&led_3);
+    ret = led_initialize(&led_4);
 }

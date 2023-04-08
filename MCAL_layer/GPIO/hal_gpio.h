@@ -16,7 +16,7 @@
 #include "hal_gpio_cfg.h"
 
 /* Section : Macro Declarations */
-#define BIT_MASK        (uint8)1
+#define BIT_MASK                (uint8)1
 #define PORT_PIN_MAX_NUMBER     8
 #define PORT_MAX_NUMBER         5
 #define PORTC_MASK              0XFF

@@ -4614,13 +4614,13 @@ typedef enum {
 } led_status_t;
 
 typedef struct {
-    uint8 port_name : 4;
+    uint8 port : 4;
     uint8 pin : 3;
     uint8 led_status : 1;
 }led_t;
 
 Std_ReturnType led_initialize(const led_t *led);
-Std_ReturnType led_trun_on(const led_t *led);
+Std_ReturnType led_turn_on(const led_t *led);
 Std_ReturnType led_turn_off(const led_t *led);
 Std_ReturnType led_toggle(const led_t *led);
 # 12 "./application.h" 2
@@ -4628,35 +4628,36 @@ Std_ReturnType led_toggle(const led_t *led);
 void application_initialize(void);
 # 9 "application.c" 2
 
-
-
-pin_config_t led_1 ={
+led_t led_1 = {
     .port = PORTC_INDEX,
     .pin = PIN0,
-    .direction = GPIO_DIRECTION_OUTPUT,
-    .logic = HIGH
+    .led_status = LED_ON
 };
-pin_config_t led_2 ={
+led_t led_2 = {
     .port = PORTC_INDEX,
     .pin = PIN1,
-    .direction = GPIO_DIRECTION_OUTPUT,
-    .logic = LOW
+    .led_status = LED_ON
 };
-pin_config_t led_3 ={
+led_t led_3 = {
     .port = PORTC_INDEX,
     .pin = PIN2,
-    .direction = GPIO_DIRECTION_OUTPUT,
-    .logic = LOW
+    .led_status = LED_ON
 };
-Std_ReturnType ret = (Std_ReturnType)0x00;
-direction_t led_1_st;
-int main() {
+led_t led_4 = {
+    .port = PORTC_INDEX,
+    .pin = PIN3,
+    .led_status = LED_ON
+};
 
+
+Std_ReturnType ret = (Std_ReturnType)0x00;
+int main() {
 
     application_initialize();
     while(1){
-
-        gpio_port_toggle_logic(PORTC_INDEX);
+        led_turn_on(&led_1);
+        _delay((unsigned long)((250)*(16000000/4000.0)));
+        led_turn_off(&led_1);
         _delay((unsigned long)((250)*(16000000/4000.0)));
 
     }
@@ -4664,6 +4665,8 @@ int main() {
     return (0);
 }
 void application_initialize(void){
-    ret = gpio_port_direction_intialize(PORTC_INDEX , 0x00);
-    ret = gpio_port_write_logic(PORTC_INDEX , 0xAA);
+    ret = led_initialize(&led_1);
+    ret = led_initialize(&led_2);
+    ret = led_initialize(&led_3);
+    ret = led_initialize(&led_4);
 }

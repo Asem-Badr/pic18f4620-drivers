@@ -4609,7 +4609,7 @@ Std_ReturnType gpio_pin_direction_intialize(const pin_config_t *_pin_config) {
     if (((void*)0) == _pin_config || _pin_config ->pin > 8 - 1) {
         ret = (Std_ReturnType)0x00;
     } else {
-        switch (_pin_config->direction) {
+        switch (_pin_config -> direction) {
             case GPIO_DIRECTION_OUTPUT:
                 (*tris_registers[_pin_config->port] &= ~((uint8)1<<_pin_config ->pin));
                 break;
