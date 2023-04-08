@@ -44,8 +44,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 "677
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4620.h: 677: extern volatile unsigned char PORTE __attribute__((address(0xF84)));
 [v _PORTE `Vuc ~T0 @X0 0 e@3972 ]
-"63 MCAL_layer/GPIO/hal_gpio.h
-[; ;MCAL_layer/GPIO/hal_gpio.h: 63: typedef struct {
+"64 MCAL_layer/GPIO/hal_gpio.h
+[; ;MCAL_layer/GPIO/hal_gpio.h: 64: typedef struct {
 [s S272 :3 `uc 1 :3 `uc 1 :1 `uc 1 :1 `uc 1 ]
 [n S272 . port pin direction logic ]
 "32 MCAL_layer/GPIO/hal_gpio.c

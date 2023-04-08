@@ -18,7 +18,7 @@
 # 1 "./application.h" 1
 # 12 "./application.h"
 # 1 "./ECU_layer/LED/ecu_led.h" 1
-# 11 "./ECU_layer/LED/ecu_led.h"
+# 12 "./ECU_layer/LED/ecu_led.h"
 # 1 "./ECU_layer/LED/../../MCAL_layer/GPIO/hal_gpio.h" 1
 # 13 "./ECU_layer/LED/../../MCAL_layer/GPIO/hal_gpio.h"
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\pic18f4620.h" 1 3
@@ -4546,7 +4546,7 @@ typedef uint8 Std_ReturnType;
 
 # 1 "./ECU_layer/LED/../../MCAL_layer/GPIO/hal_gpio_cfg.h" 1
 # 16 "./ECU_layer/LED/../../MCAL_layer/GPIO/hal_gpio.h" 2
-# 33 "./ECU_layer/LED/../../MCAL_layer/GPIO/hal_gpio.h"
+# 34 "./ECU_layer/LED/../../MCAL_layer/GPIO/hal_gpio.h"
 typedef enum {
     LOW = 0,
     HIGH
@@ -4597,7 +4597,32 @@ Std_ReturnType gpio_port_get_direction_status(port_index_t port, uint8 *directio
 Std_ReturnType gpio_port_write_logic(port_index_t port, uint8 logic);
 Std_ReturnType gpio_port_read_logic(port_index_t port, uint8 *logic);
 Std_ReturnType gpio_port_toggle_logic(port_index_t port);
-# 11 "./ECU_layer/LED/ecu_led.h" 2
+# 12 "./ECU_layer/LED/ecu_led.h" 2
+
+# 1 "./ECU_layer/LED/ecu_led_cfg.h" 1
+# 13 "./ECU_layer/LED/ecu_led.h" 2
+
+
+
+
+
+
+
+typedef enum {
+    LED_OFF,
+    LED_ON
+} led_status_t;
+
+typedef struct {
+    uint8 port_name : 4;
+    uint8 pin : 3;
+    uint8 led_status : 1;
+}led_t;
+
+Std_ReturnType led_initialize(const led_t *led);
+Std_ReturnType led_trun_on(const led_t *led);
+Std_ReturnType led_turn_off(const led_t *led);
+Std_ReturnType led_toggle(const led_t *led);
 # 12 "./application.h" 2
 # 21 "./application.h"
 void application_initialize(void);

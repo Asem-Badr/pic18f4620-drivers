@@ -23,7 +23,7 @@ idataCOMRAM CODE 0 FEC3 FEC3 21 1
 cstackCOMRAM COMRAM 1 22 22 7 1
 dataCOMRAM COMRAM 1 1 1 21 1
 bssCOMRAM COMRAM 1 2A 2A 1 1
-$C:\Users\Asem\AppData\Local\Temp\seks.o
+$C:\Users\Asem\AppData\Local\Temp\s854.o
 idloc IDLOC 0 200000 200000 8 1
 init CODE 0 0 0 4 1
 config CONFIG 0 300000 300000 E 1
@@ -109,29 +109,29 @@ FEE4 text0 CODE >35:E:\diploma\projects\application.c
 FEE8 text0 CODE >36:E:\diploma\projects\application.c
 FEE8 text0 CODE >38:E:\diploma\projects\application.c
 FEEE text0 CODE >39:E:\diploma\projects\application.c
-FF0C cinit CODE >1117:C:\Users\Asem\AppData\Local\Temp\seks.s
-FF0C cinit CODE >1119:C:\Users\Asem\AppData\Local\Temp\seks.s
-FF0C cinit CODE >1122:C:\Users\Asem\AppData\Local\Temp\seks.s
-FF0C cinit CODE >1177:C:\Users\Asem\AppData\Local\Temp\seks.s
-FF0E cinit CODE >1178:C:\Users\Asem\AppData\Local\Temp\seks.s
-FF10 cinit CODE >1179:C:\Users\Asem\AppData\Local\Temp\seks.s
-FF12 cinit CODE >1180:C:\Users\Asem\AppData\Local\Temp\seks.s
-FF14 cinit CODE >1181:C:\Users\Asem\AppData\Local\Temp\seks.s
-FF16 cinit CODE >1182:C:\Users\Asem\AppData\Local\Temp\seks.s
-FF18 cinit CODE >1183:C:\Users\Asem\AppData\Local\Temp\seks.s
-FF1C cinit CODE >1184:C:\Users\Asem\AppData\Local\Temp\seks.s
-FF20 cinit CODE >1185:C:\Users\Asem\AppData\Local\Temp\seks.s
-FF20 cinit CODE >1186:C:\Users\Asem\AppData\Local\Temp\seks.s
-FF22 cinit CODE >1187:C:\Users\Asem\AppData\Local\Temp\seks.s
-FF26 cinit CODE >1188:C:\Users\Asem\AppData\Local\Temp\seks.s
-FF28 cinit CODE >1189:C:\Users\Asem\AppData\Local\Temp\seks.s
-FF2A cinit CODE >1190:C:\Users\Asem\AppData\Local\Temp\seks.s
-FF2C cinit CODE >1194:C:\Users\Asem\AppData\Local\Temp\seks.s
-FF2E cinit CODE >1200:C:\Users\Asem\AppData\Local\Temp\seks.s
-FF2E cinit CODE >1203:C:\Users\Asem\AppData\Local\Temp\seks.s
-FF30 cinit CODE >1204:C:\Users\Asem\AppData\Local\Temp\seks.s
-FF32 cinit CODE >1205:C:\Users\Asem\AppData\Local\Temp\seks.s
-FF34 cinit CODE >1206:C:\Users\Asem\AppData\Local\Temp\seks.s
+FF0C cinit CODE >1117:C:\Users\Asem\AppData\Local\Temp\s854.s
+FF0C cinit CODE >1119:C:\Users\Asem\AppData\Local\Temp\s854.s
+FF0C cinit CODE >1122:C:\Users\Asem\AppData\Local\Temp\s854.s
+FF0C cinit CODE >1177:C:\Users\Asem\AppData\Local\Temp\s854.s
+FF0E cinit CODE >1178:C:\Users\Asem\AppData\Local\Temp\s854.s
+FF10 cinit CODE >1179:C:\Users\Asem\AppData\Local\Temp\s854.s
+FF12 cinit CODE >1180:C:\Users\Asem\AppData\Local\Temp\s854.s
+FF14 cinit CODE >1181:C:\Users\Asem\AppData\Local\Temp\s854.s
+FF16 cinit CODE >1182:C:\Users\Asem\AppData\Local\Temp\s854.s
+FF18 cinit CODE >1183:C:\Users\Asem\AppData\Local\Temp\s854.s
+FF1C cinit CODE >1184:C:\Users\Asem\AppData\Local\Temp\s854.s
+FF20 cinit CODE >1185:C:\Users\Asem\AppData\Local\Temp\s854.s
+FF20 cinit CODE >1186:C:\Users\Asem\AppData\Local\Temp\s854.s
+FF22 cinit CODE >1187:C:\Users\Asem\AppData\Local\Temp\s854.s
+FF26 cinit CODE >1188:C:\Users\Asem\AppData\Local\Temp\s854.s
+FF28 cinit CODE >1189:C:\Users\Asem\AppData\Local\Temp\s854.s
+FF2A cinit CODE >1190:C:\Users\Asem\AppData\Local\Temp\s854.s
+FF2C cinit CODE >1194:C:\Users\Asem\AppData\Local\Temp\s854.s
+FF2E cinit CODE >1200:C:\Users\Asem\AppData\Local\Temp\s854.s
+FF2E cinit CODE >1203:C:\Users\Asem\AppData\Local\Temp\s854.s
+FF30 cinit CODE >1204:C:\Users\Asem\AppData\Local\Temp\s854.s
+FF32 cinit CODE >1205:C:\Users\Asem\AppData\Local\Temp\s854.s
+FF34 cinit CODE >1206:C:\Users\Asem\AppData\Local\Temp\s854.s
 # %SYMTAB Section
 # An enumeration of all symbols in the program.
 # The beginning of the section is indicated by %SYMTAB.
@@ -151,7 +151,7 @@ __Hspace_2 0 0 ABS 0 - dist/default/production\projects.production.o
 __size_of_gpio_port_write_logic 0 0 ABS 0 - dist/default/production\projects.production.o
 __CFG_IESO$OFF 0 0 ABS 0 - dist/default/production\projects.production.o
 __Hibigdata 0 0 CODE 0 ibigdata dist/default/production\projects.production.o
-__mediumconst 0 0 MEDIUMCONST 0 mediumconst C:\Users\Asem\AppData\Local\Temp\seks.o
+__mediumconst 0 0 MEDIUMCONST 0 mediumconst C:\Users\Asem\AppData\Local\Temp\s854.o
 __Heeprom_data 0 0 EEDATA 0 eeprom_data dist/default/production\projects.production.o
 __CFG_MCLRE$ON 0 0 ABS 0 - dist/default/production\projects.production.o
 _lat_registers B 0 COMRAM 1 dataCOMRAM dist/default/production\projects.production.o
@@ -161,9 +161,9 @@ _LATB F8A 0 ABS 0 - dist/default/production\projects.production.o
 _LATC F8B 0 ABS 0 - dist/default/production\projects.production.o
 _LATD F8C 0 ABS 0 - dist/default/production\projects.production.o
 _LATE F8D 0 ABS 0 - dist/default/production\projects.production.o
-___sp 0 0 STACK 2 stack C:\Users\Asem\AppData\Local\Temp\seks.o
+___sp 0 0 STACK 2 stack C:\Users\Asem\AppData\Local\Temp\s854.o
 _main FEE4 0 CODE 0 text0 dist/default/production\projects.production.o
-start 0 0 CODE 0 init C:\Users\Asem\AppData\Local\Temp\seks.o
+start 0 0 CODE 0 init C:\Users\Asem\AppData\Local\Temp\s854.o
 __CFG_BOREN$OFF 0 0 ABS 0 - dist/default/production\projects.production.o
 __size_of_main 0 0 ABS 0 - dist/default/production\projects.production.o
 __HbssCOMRAM 0 0 ABS 0 bssCOMRAM dist/default/production\projects.production.o
@@ -172,11 +172,11 @@ __Hpowerup 0 0 CODE 0 powerup dist/default/production\projects.production.o
 __LnvCOMRAM 0 0 ABS 0 nvCOMRAM dist/default/production\projects.production.o
 __HdataCOMRAM 0 0 ABS 0 dataCOMRAM dist/default/production\projects.production.o
 gpio_port_write_logic@port 26 0 COMRAM 1 cstackCOMRAM dist/default/production\projects.production.o
-__accesstop 80 0 ABS 0 - C:\Users\Asem\AppData\Local\Temp\seks.o
-intlevel0 0 0 CODE 0 text C:\Users\Asem\AppData\Local\Temp\seks.o
-intlevel1 0 0 CODE 0 text C:\Users\Asem\AppData\Local\Temp\seks.o
-intlevel2 0 0 CODE 0 text C:\Users\Asem\AppData\Local\Temp\seks.o
-intlevel3 0 0 CODE 0 text C:\Users\Asem\AppData\Local\Temp\seks.o
+__accesstop 80 0 ABS 0 - C:\Users\Asem\AppData\Local\Temp\s854.o
+intlevel0 0 0 CODE 0 text C:\Users\Asem\AppData\Local\Temp\s854.o
+intlevel1 0 0 CODE 0 text C:\Users\Asem\AppData\Local\Temp\s854.o
+intlevel2 0 0 CODE 0 text C:\Users\Asem\AppData\Local\Temp\s854.o
+intlevel3 0 0 CODE 0 text C:\Users\Asem\AppData\Local\Temp\s854.o
 __LbssCOMRAM 0 0 ABS 0 bssCOMRAM dist/default/production\projects.production.o
 __LnvFARRAM 0 0 FARRAM 0 nvFARRAM dist/default/production\projects.production.o
 __CFG_EBTR0$OFF 0 0 ABS 0 - dist/default/production\projects.production.o
@@ -189,8 +189,8 @@ __CFG_EBTRB$OFF 0 0 ABS 0 - dist/default/production\projects.production.o
 __Hifardata 0 0 CODE 0 ifardata dist/default/production\projects.production.o
 __Hclrtext 0 0 ABS 0 clrtext dist/default/production\projects.production.o
 __pidataCOMRAM FEC3 0 CODE 0 idataCOMRAM dist/default/production\projects.production.o
-___inthi_sp 0 0 STACK 2 stack C:\Users\Asem\AppData\Local\Temp\seks.o
-___intlo_sp 0 0 STACK 2 stack C:\Users\Asem\AppData\Local\Temp\seks.o
+___inthi_sp 0 0 STACK 2 stack C:\Users\Asem\AppData\Local\Temp\s854.o
+___intlo_sp 0 0 STACK 2 stack C:\Users\Asem\AppData\Local\Temp\s854.o
 __LdataCOMRAM 0 0 ABS 0 dataCOMRAM dist/default/production\projects.production.o
 gpio_port_write_logic@ret 25 0 COMRAM 1 cstackCOMRAM dist/default/production\projects.production.o
 __Hintcode_body 0 0 ABS 0 intcode_body dist/default/production\projects.production.o
@@ -241,7 +241,7 @@ __Hbank14 0 0 ABS 0 bank14 dist/default/production\projects.production.o
 __Hbank15 0 0 ABS 0 bank15 dist/default/production\projects.production.o
 __Hbigbss 0 0 BIGRAM 1 bigbss dist/default/production\projects.production.o
 __Hbigram 0 0 ABS 0 bigram dist/default/production\projects.production.o
-__smallconst 0 0 SMALLCONST 0 smallconst C:\Users\Asem\AppData\Local\Temp\seks.o
+__smallconst 0 0 SMALLCONST 0 smallconst C:\Users\Asem\AppData\Local\Temp\s854.o
 __Hcomram 0 0 ABS 0 comram dist/default/production\projects.production.o
 __Hconfig 30000E 0 CONFIG 0 config dist/default/production\projects.production.o
 __CFG_LPT1OSC$OFF 0 0 ABS 0 - dist/default/production\projects.production.o
@@ -321,8 +321,8 @@ __Lconfig 300000 0 CONFIG 0 config dist/default/production\projects.production.o
 __end_of_gpio_port_direction_intialize FFBA 0 CODE 0 text4 dist/default/production\projects.production.o
 __Lfarbss 0 0 FARRAM 0 farbss dist/default/production\projects.production.o
 __Lfardata 0 0 FARRAM 0 fardata dist/default/production\projects.production.o
-stackhi F7F 0 ABS 0 - C:\Users\Asem\AppData\Local\Temp\seks.o
-stacklo 80 0 ABS 0 - C:\Users\Asem\AppData\Local\Temp\seks.o
+stackhi F7F 0 ABS 0 - C:\Users\Asem\AppData\Local\Temp\s854.o
+stacklo 80 0 ABS 0 - C:\Users\Asem\AppData\Local\Temp\s854.o
 __Lintcode 0 0 CODE 0 intcode dist/default/production\projects.production.o
 __Lintret 0 0 ABS 0 intret dist/default/production\projects.production.o
 __Lirdata 0 0 CODE 0 irdata dist/default/production\projects.production.o
@@ -350,7 +350,7 @@ __ptext2 FEA8 0 CODE 0 text2 dist/default/production\projects.production.o
 __ptext3 FFBA 0 CODE 0 text3 dist/default/production\projects.production.o
 __ptext4 FF74 0 CODE 0 text4 dist/default/production\projects.production.o
 __Lstruct 0 0 COMRAM 1 struct dist/default/production\projects.production.o
-__ramtop 1000 0 RAM 0 ramtop C:\Users\Asem\AppData\Local\Temp\seks.o
+__ramtop 1000 0 RAM 0 ramtop C:\Users\Asem\AppData\Local\Temp\s854.o
 __Lpowerup 0 0 CODE 0 powerup dist/default/production\projects.production.o
 __Leeprom_data 0 0 EEDATA 0 eeprom_data dist/default/production\projects.production.o
 __Lreset_vec 0 0 CODE 0 reset_vec dist/default/production\projects.production.o

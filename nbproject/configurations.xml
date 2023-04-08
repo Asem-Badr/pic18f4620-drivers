@@ -7,6 +7,7 @@
       <logicalFolder name="ECU_layer" displayName="ECU_layer" projectFiles="true">
         <logicalFolder name="LED" displayName="LED" projectFiles="true">
           <itemPath>ECU_layer/LED/ecu_led.h</itemPath>
+          <itemPath>ECU_layer/LED/ecu_led_cfg.h</itemPath>
         </logicalFolder>
       </logicalFolder>
       <logicalFolder name="MCAL_layer" displayName="MCAL_layer" projectFiles="true">

@@ -4541,7 +4541,7 @@ typedef uint8 Std_ReturnType;
 
 # 1 "MCAL_layer/GPIO/hal_gpio_cfg.h" 1
 # 16 "MCAL_layer/GPIO/hal_gpio.h" 2
-# 33 "MCAL_layer/GPIO/hal_gpio.h"
+# 34 "MCAL_layer/GPIO/hal_gpio.h"
 typedef enum {
     LOW = 0,
     HIGH

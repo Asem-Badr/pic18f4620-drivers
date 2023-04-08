@@ -1,7 +1,7 @@
 
 
 Microchip MPLAB XC8 Assembler V2.10 build 88905656 
-                                                                                               Sat Apr 08 01:20:37 2023
+                                                                                               Sat Apr 08 15:10:57 2023
 
 Microchip MPLAB XC8 C Compiler v2.10 (Free license) build 20190730164152 Og1 
      1                           	processor	18F4620
@@ -251,7 +251,7 @@ Microchip MPLAB XC8 C Compiler v2.10 (Free license) build 20190730164152 Og1
    237 ;; Auto vars:     Size  Location     Type
    238 ;;		None
    239 ;; Return value:  Size  Location     Type
-   240 ;;                  2  139[None  ] int 
+   240 ;;                  2  167[None  ] int 
    241 ;; Registers used:
    242 ;;		wreg, fsr2l, fsr2h, status,2, status,0, prodl, prodh, cstack
    243 ;; Tracked objects:
@@ -286,7 +286,7 @@ Microchip MPLAB XC8 C Compiler v2.10 (Free license) build 20190730164152 Og1
    267  00FEE4                     
    268                           ;application.c: 35:     application_initialize();
    269  00FEE4  EC54  F07F         	call	_application_initialize	;wreg free
-   270  00FEE8                     l140:
+   270  00FEE8                     l168:
    271                           
    272                           ;application.c: 38:         gpio_port_toggle_logic(PORTC_INDEX);
    273  00FEE8  0E02               	movlw	2
@@ -298,14 +298,14 @@ Microchip MPLAB XC8 C Compiler v2.10 (Free license) build 20190730164152 Og1
    279  00FEF2  0E13               	movlw	19
    280  00FEF4  6E27               	movwf	??_main^0,c
    281  00FEF6  0EAE               	movlw	174
-   282  00FEF8                     u327:
+   282  00FEF8                     u407:
    283  00FEF8  2EE8               	decfsz	wreg,f,c
-   284  00FEFA  D7FE               	bra	u327
+   284  00FEFA  D7FE               	bra	u407
    285  00FEFC  2E27               	decfsz	??_main^0,f,c
-   286  00FEFE  D7FC               	bra	u327
+   286  00FEFE  D7FC               	bra	u407
    287  00FF00  2E28               	decfsz	(??_main+1)^0,f,c
-   288  00FF02  D7FA               	bra	u327
-   289  00FF04  EF74  F07F         	goto	l140
+   288  00FF02  D7FA               	bra	u407
+   289  00FF04  EF74  F07F         	goto	l168
    290  00FF08  EF00  F000         	goto	start
    291  00FF0C                     __end_of_main:
    292                           	opt callstack 0
@@ -361,12 +361,12 @@ Microchip MPLAB XC8 C Compiler v2.10 (Free license) build 20190730164152 Og1
    337  00FF3E  EFA3  F07F         	goto	u131
    338  00FF42  EFA5  F07F         	goto	u130
    339  00FF46                     u131:
-   340  00FF46  EFA7  F07F         	goto	l900
+   340  00FF46  EFA7  F07F         	goto	l928
    341  00FF4A                     u130:
    342  00FF4A                     
    343                           ;MCAL_layer/GPIO/hal_gpio.c: 203:     }else{
-   344  00FF4A  EFB9  F07F         	goto	l115
-   345  00FF4E                     l900:
+   344  00FF4A  EFB9  F07F         	goto	l143
+   345  00FF4E                     l928:
    346                           
    347                           ;MCAL_layer/GPIO/hal_gpio.c: 204:         *lat_registers[port] ^= 0XFF;
    348  00FF4E  5025               	movf	gpio_port_toggle_logic@port^0,w,c
@@ -383,7 +383,7 @@ Microchip MPLAB XC8 C Compiler v2.10 (Free license) build 20190730164152 Og1
    359  00FF6A  C023  FFDA         	movff	??_gpio_port_toggle_logic+1,fsr2h
    360  00FF6E  0EFF               	movlw	255
    361  00FF70  1ADF               	xorwf	indf2,f,c
-   362  00FF72                     l115:
+   362  00FF72                     l143:
    363  00FF72  0012               	return		;funcret
    364  00FF74                     __end_of_gpio_port_toggle_logic:
    365                           	opt callstack 0
@@ -500,19 +500,19 @@ Microchip MPLAB XC8 C Compiler v2.10 (Free license) build 20190730164152 Og1
    466                           ;MCAL_layer/GPIO/hal_gpio.c: 170:     if(port >5 -1){
    467  00FFC0  0E04               	movlw	4
    468  00FFC2  6426               	cpfsgt	gpio_port_write_logic@port^0,c
-   469  00FFC4  EFE6  F07F         	goto	u311
-   470  00FFC8  EFE8  F07F         	goto	u310
-   471  00FFCC                     u311:
-   472  00FFCC  EFEC  F07F         	goto	l998
-   473  00FFD0                     u310:
+   469  00FFC4  EFE6  F07F         	goto	u391
+   470  00FFC8  EFE8  F07F         	goto	u390
+   471  00FFCC                     u391:
+   472  00FFCC  EFEC  F07F         	goto	l1058
+   473  00FFD0                     u390:
    474  00FFD0                     
    475                           ;MCAL_layer/GPIO/hal_gpio.c: 171:         ret = (Std_ReturnType)0x00;
    476  00FFD0  0E00               	movlw	0
    477  00FFD2  6E25               	movwf	gpio_port_write_logic@ret^0,c
    478                           
    479                           ;MCAL_layer/GPIO/hal_gpio.c: 172:     }else{
-   480  00FFD4  EFFE  F07F         	goto	l1000
-   481  00FFD8                     l998:
+   480  00FFD4  EFFE  F07F         	goto	l1060
+   481  00FFD8                     l1058:
    482                           
    483                           ;MCAL_layer/GPIO/hal_gpio.c: 173:         *lat_registers[port] = logic;
    484  00FFD8  5026               	movf	gpio_port_write_logic@port^0,w,c
@@ -528,7 +528,7 @@ Microchip MPLAB XC8 C Compiler v2.10 (Free license) build 20190730164152 Og1
    494  00FFF0  C023  FFD9         	movff	??_gpio_port_write_logic,fsr2l
    495  00FFF4  C024  FFDA         	movff	??_gpio_port_write_logic+1,fsr2h
    496  00FFF8  C022  FFDF         	movff	gpio_port_write_logic@logic,indf2
-   497  00FFFC                     l1000:
+   497  00FFFC                     l1060:
    498                           
    499                           ;MCAL_layer/GPIO/hal_gpio.c: 175:     return ret;
    500  00FFFC  5025               	movf	gpio_port_write_logic@ret^0,w,c
@@ -589,19 +589,19 @@ Microchip MPLAB XC8 C Compiler v2.10 (Free license) build 20190730164152 Og1
    550                           ;MCAL_layer/GPIO/hal_gpio.c: 140:     if(port >5 -1){
    551  00FF7A  0E04               	movlw	4
    552  00FF7C  6426               	cpfsgt	gpio_port_direction_intialize@port^0,c
-   553  00FF7E  EFC3  F07F         	goto	u301
-   554  00FF82  EFC5  F07F         	goto	u300
-   555  00FF86                     u301:
-   556  00FF86  EFC9  F07F         	goto	l986
-   557  00FF8A                     u300:
+   553  00FF7E  EFC3  F07F         	goto	u381
+   554  00FF82  EFC5  F07F         	goto	u380
+   555  00FF86                     u381:
+   556  00FF86  EFC9  F07F         	goto	l1046
+   557  00FF8A                     u380:
    558  00FF8A                     
    559                           ;MCAL_layer/GPIO/hal_gpio.c: 141:         ret = (Std_ReturnType)0x00;
    560  00FF8A  0E00               	movlw	0
    561  00FF8C  6E25               	movwf	gpio_port_direction_intialize@ret^0,c
    562                           
    563                           ;MCAL_layer/GPIO/hal_gpio.c: 142:     }else{
-   564  00FF8E  EFDB  F07F         	goto	l988
-   565  00FF92                     l986:
+   564  00FF8E  EFDB  F07F         	goto	l1048
+   565  00FF92                     l1046:
    566                           
    567                           ;MCAL_layer/GPIO/hal_gpio.c: 143:         *tris_registers[port] = direction;
    568  00FF92  5026               	movf	gpio_port_direction_intialize@port^0,w,c
@@ -617,7 +617,7 @@ Microchip MPLAB XC8 C Compiler v2.10 (Free license) build 20190730164152 Og1
    578  00FFAA  C023  FFD9         	movff	??_gpio_port_direction_intialize,fsr2l
    579  00FFAE  C024  FFDA         	movff	??_gpio_port_direction_intialize+1,fsr2h
    580  00FFB2  C022  FFDF         	movff	gpio_port_direction_intialize@direction,indf2
-   581  00FFB6                     l988:
+   581  00FFB6                     l1048:
    582                           
    583                           ;MCAL_layer/GPIO/hal_gpio.c: 145:     return ret;
    584  00FFB6  5025               	movf	gpio_port_direction_intialize@ret^0,w,c
@@ -859,29 +859,29 @@ CODE                 0      0       0       0        0.0%
 
 
 Microchip Technology PIC18 Macro Assembler V2.10 build 88905656 
-Symbol Table                                                                                   Sat Apr 08 01:20:37 2023
+Symbol Table                                                                                   Sat Apr 08 15:10:57 2023
 
-                                    l93 FFB8                             __CFG_BORV$1 000000  
-                          __CFG_CP0$OFF 000000                            __CFG_CP1$OFF 000000  
-                          __CFG_CP2$OFF 000000                            __CFG_CP3$OFF 000000  
-                           __CFG_OSC$HS 000000                                     l105 FFFE  
-                                   l115 FF72                                     l140 FEE8  
-                                   l146 FEC0                                     l900 FF4E  
-                                   l980 FF76                                     l982 FF7A  
-                                   l894 FF3A                                     l984 FF8A  
-                                   l992 FFBC                                     l896 FF3A  
-                                   l986 FF92                                     l994 FFC0  
-                                   l898 FF4A                                     l988 FFB6  
-                                   l996 FFD0                                     l998 FFD8  
-                          __CFG_CPB$OFF 000000                                     u130 FF4A  
-                                   u131 FF46                                     u300 FF8A  
-                                   u301 FF86                                     u310 FFD0  
-                                   u311 FFCC                                     u327 FEF8  
-                          __CFG_CPD$OFF 000000                                     _ret 0029  
-                                   prod 000FF3                                     wreg 000FE8  
-                          __CFG_LVP$OFF 000000                            __CFG_WDT$OFF 000000  
-                                  l1000 FFFC                                    l1004 FEA8  
-                                  l1006 FEE4                                    l1008 FEEE  
+                           __CFG_BORV$1 000000                            __CFG_CP0$OFF 000000  
+                          __CFG_CP1$OFF 000000                            __CFG_CP2$OFF 000000  
+                          __CFG_CP3$OFF 000000                             __CFG_OSC$HS 000000  
+                                   l121 FFB8                                     l133 FFFE  
+                                   l143 FF72                                     l174 FEC0  
+                                   l168 FEE8                                     l922 FF3A  
+                                   l924 FF3A                                     l926 FF4A  
+                                   l928 FF4E                            __CFG_CPB$OFF 000000  
+                                   u130 FF4A                                     u131 FF46  
+                                   u407 FEF8                            __CFG_CPD$OFF 000000  
+                                   u380 FF8A                                     u381 FF86  
+                                   u390 FFD0                                     u391 FFCC  
+                                   _ret 0029                                     prod 000FF3  
+                                   wreg 000FE8                            __CFG_LVP$OFF 000000  
+                          __CFG_WDT$OFF 000000                                    l1040 FF76  
+                                  l1042 FF7A                                    l1044 FF8A  
+                                  l1060 FFFC                                    l1052 FFBC  
+                                  l1046 FF92                                    l1054 FFC0  
+                                  l1048 FFB6                                    l1056 FFD0  
+                                  l1064 FEA8                                    l1058 FFD8  
+                                  l1066 FEE4                                    l1068 FEEE  
                                   _LATA 000F89                                    _LATB 000F8A  
                                   _LATC 000F8B                                    _LATD 000F8C  
                                   _LATE 000F8D                                    _main FEE4  
