@@ -5,11 +5,14 @@
         <group>
             <file>file:/E:/diploma/projects/MCAL_layer/GPIO/hal_gpio.h</file>
             <file>file:/E:/diploma/projects/ECU_layer/LED/ecu_led.c</file>
-            <file>file:/E:/diploma/projects/application.c</file>
             <file>file:/E:/diploma/projects/ECU_layer/LED/ecu_led_cfg.h</file>
+            <file>file:/E:/diploma/projects/application.c</file>
+            <file>file:/E:/diploma/projects/ECU_layer/button/ecu_button.h</file>
+            <file>file:/E:/diploma/projects/ECU_layer/button/ecu_button_cfg.h</file>
             <file>file:/E:/diploma/projects/ECU_layer/LED/ecu_led.h</file>
-            <file>file:/E:/diploma/projects/MCAL_layer/GPIO/hal_gpio.c</file>
             <file>file:/E:/diploma/projects/application.h</file>
+            <file>file:/E:/diploma/projects/MCAL_layer/GPIO/hal_gpio.c</file>
+            <file>file:/E:/diploma/projects/ECU_layer/button/ecu_button.c</file>
         </group>
     </open-files>
 </project-private>

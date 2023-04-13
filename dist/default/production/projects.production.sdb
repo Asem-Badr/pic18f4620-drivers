@@ -3,6 +3,20 @@
 [d edition pro ]
 [d chip 18F4620 ]
 [d frameptr 4065 ]
+"11 E:\diploma\projects\ECU_layer/button/ecu_button.c
+[e E2817 . `uc
+BUTTON_PRESSED 0
+BUTTON_RELEASED 1
+]
+[e E2821 . `uc
+BUTTON_ACTIVE_HIGH 0
+BUTTON_ACTIVE_LOW 1
+]
+"25
+[e E2757 . `uc
+LOW 0
+HIGH 1
+]
 "21 E:\diploma\projects\ECU_layer/LED/ecu_led.c
 [e E2761 . `uc
 GPIO_DIRECTION_OUTPUT 0
@@ -31,7 +45,15 @@ PORTC_INDEX 2
 PORTD_INDEX 3
 PORTE_INDEX 4
 ]
-"10 E:\diploma\projects\application.c
+"11 E:\diploma\projects\application.c
+[e E2834 . `uc
+BUTTON_PRESSED 0
+BUTTON_RELEASED 1
+]
+[e E2838 . `uc
+BUTTON_ACTIVE_HIGH 0
+BUTTON_ACTIVE_LOW 1
+]
 [e E2775 . `uc
 PORTA_INDEX 0
 PORTB_INDEX 1
@@ -49,13 +71,27 @@ PIN5 5
 PIN6 6
 PIN7 7
 ]
-[e E2817 . `uc
-LED_OFF 0
-LED_ON 1
+[e E2761 . `uc
+GPIO_DIRECTION_OUTPUT 0
+GPIO_DIRECTION_INPUT 1
 ]
-"33
+[e E2757 . `uc
+LOW 0
+HIGH 1
+]
+"14 E:\diploma\projects\ECU_layer/Relay/ecu_relay.c
+[e E2761 . `uc
+GPIO_DIRECTION_OUTPUT 0
+GPIO_DIRECTION_INPUT 1
+]
+"35
+[e E2757 . `uc
+LOW 0
+HIGH 1
+]
+"48 E:\diploma\projects\application.c
 [v _main main `(i  1 e 2 0 ]
-"46
+"62
 [v _application_initialize application_initialize `(v  1 e 1 0 ]
 "4 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\fleq.c
 [v ___fleq __fleq `(b  1 e 0 0 ]
@@ -81,33 +117,29 @@ LED_ON 1
 [v ___lmul __lmul `(ul  1 e 4 0 ]
 "91 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\Umul64.c
 [v ___omul __omul `(uo  1 e 8 0 ]
-"15 E:\diploma\projects\ECU_layer/LED/ecu_led.c
-[v _led_initialize led_initialize `(uc  1 e 1 0 ]
-"37
-[v _led_turn_on led_turn_on `(uc  1 e 1 0 ]
-"58
-[v _led_turn_off led_turn_off `(uc  1 e 1 0 ]
+"9 E:\diploma\projects\ECU_layer/Relay/ecu_relay.c
+[v _relay_initialize relay_initialize `(uc  1 e 1 0 ]
+"24
+[v _relay_turn_on relay_turn_on `(uc  1 e 1 0 ]
+"39
+[v _relay_turn_off relay_turn_off `(uc  1 e 1 0 ]
 "19 E:\diploma\projects\MCAL_layer/GPIO/hal_gpio.c
 [v _gpio_pin_direction_intialize gpio_pin_direction_intialize `(uc  1 e 1 0 ]
 "59
 [v _gpio_pin_write_logic gpio_pin_write_logic `(uc  1 e 1 0 ]
+"85
+[v _gpio_pin_read_logic gpio_pin_read_logic `(uc  1 e 1 0 ]
 "102
 [v _gpio_pin_toggle_logic gpio_pin_toggle_logic `(uc  1 e 1 0 ]
 "119
 [v _gpio_pin_initialize gpio_pin_initialize `(uc  1 e 1 0 ]
-[s S24 . 1 `uc 1 port 1 0 :4:0 
-`uc 1 pin 1 0 :3:4 
-`uc 1 led_status 1 0 :1:7 
+[s S311 . 1 `uc 1 relay_port 1 0 :4:0 
+`uc 1 relay_pin 1 0 :3:4 
+`uc 1 relay_status 1 0 :1:7 
 ]
-"10 E:\diploma\projects\application.c
-[v _led_1 led_1 `S24  1 e 1 0 ]
-"15
-[v _led_2 led_2 `S24  1 e 1 0 ]
-"20
-[v _led_3 led_3 `S24  1 e 1 0 ]
-"25
-[v _led_4 led_4 `S24  1 e 1 0 ]
-"32
+"38 E:\diploma\projects\application.c
+[v _relay_1 relay_1 `S311  1 e 1 0 ]
+"44
 [v _ret ret `uc  1 e 1 0 ]
 "52 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4620.h
 [v _PORTA PORTA `VEuc  1 e 1 @3968 ]
@@ -145,90 +177,94 @@ LED_ON 1
 [v _lat_registers lat_registers `[5]*.39VEuc  1 e 10 0 ]
 "11
 [v _port_registers port_registers `[5]*.39VEuc  1 e 10 0 ]
-"33 E:\diploma\projects\application.c
+"48 E:\diploma\projects\application.c
 [v _main main `(i  1 e 2 0 ]
 {
-"45
+"60
 } 0
-"37 E:\diploma\projects\ECU_layer/LED/ecu_led.c
-[v _led_turn_on led_turn_on `(uc  1 e 1 0 ]
+"24 E:\diploma\projects\ECU_layer/Relay/ecu_relay.c
+[v _relay_turn_on relay_turn_on `(uc  1 e 1 0 ]
 {
-[s S28 . 1 `uc 1 port 1 0 :3:0 
+[s S24 . 1 `uc 1 port 1 0 :3:0 
 `uc 1 pin 1 0 :3:3 
 `uc 1 direction 1 0 :1:6 
 `uc 1 logic 1 0 :1:7 
 ]
-"42
-[v led_turn_on@pin_opject pin_opject `S28  1 a 1 14 ]
-[s S24 . 1 `uc 1 port 1 0 :4:0 
-`uc 1 pin 1 0 :3:4 
-`uc 1 led_status 1 0 :1:7 
+"29
+[v relay_turn_on@pin_opject pin_opject `S24  1 a 1 14 ]
+"25
+[v relay_turn_on@ret ret `uc  1 a 1 13 ]
+[s S311 . 1 `uc 1 relay_port 1 0 :4:0 
+`uc 1 relay_pin 1 0 :3:4 
+`uc 1 relay_status 1 0 :1:7 
 ]
-"37
-[v led_turn_on@led led `*.39CS24  1 p 2 10 ]
-"41
-[v led_turn_on@F2842 F2842 `S28  1 s 1 F2842 ]
-"51
+"24
+[v relay_turn_on@_relay _relay `*.39CS311  1 p 2 10 ]
+"28
+[v relay_turn_on@F2836 F2836 `S24  1 s 1 F2836 ]
+"38
 } 0
-"58
-[v _led_turn_off led_turn_off `(uc  1 e 1 0 ]
+"39
+[v _relay_turn_off relay_turn_off `(uc  1 e 1 0 ]
 {
-[s S28 . 1 `uc 1 port 1 0 :3:0 
+[s S24 . 1 `uc 1 port 1 0 :3:0 
 `uc 1 pin 1 0 :3:3 
 `uc 1 direction 1 0 :1:6 
 `uc 1 logic 1 0 :1:7 
 ]
-"63
-[v led_turn_off@pin_opject pin_opject `S28  1 a 1 14 ]
-[s S24 . 1 `uc 1 port 1 0 :4:0 
-`uc 1 pin 1 0 :3:4 
-`uc 1 led_status 1 0 :1:7 
+"44
+[v relay_turn_off@pin_opject pin_opject `S24  1 a 1 14 ]
+"40
+[v relay_turn_off@ret ret `uc  1 a 1 13 ]
+[s S311 . 1 `uc 1 relay_port 1 0 :4:0 
+`uc 1 relay_pin 1 0 :3:4 
+`uc 1 relay_status 1 0 :1:7 
 ]
-"58
-[v led_turn_off@led led `*.39CS24  1 p 2 10 ]
-"62
-[v led_turn_off@F2847 F2847 `S28  1 s 1 F2847 ]
-"72
+"39
+[v relay_turn_off@_relay _relay `*.39CS311  1 p 2 10 ]
+"43
+[v relay_turn_off@F2841 F2841 `S24  1 s 1 F2841 ]
+"53
 } 0
-"46 E:\diploma\projects\application.c
+"62 E:\diploma\projects\application.c
 [v _application_initialize application_initialize `(v  1 e 1 0 ]
 {
-"51
+"64
 } 0
-"15 E:\diploma\projects\ECU_layer/LED/ecu_led.c
-[v _led_initialize led_initialize `(uc  1 e 1 0 ]
+"9 E:\diploma\projects\ECU_layer/Relay/ecu_relay.c
+[v _relay_initialize relay_initialize `(uc  1 e 1 0 ]
 {
-[s S28 . 1 `uc 1 port 1 0 :3:0 
+[s S24 . 1 `uc 1 port 1 0 :3:0 
 `uc 1 pin 1 0 :3:3 
 `uc 1 direction 1 0 :1:6 
 `uc 1 logic 1 0 :1:7 
 ]
-"21
-[v led_initialize@pin_opject pin_opject `S28  1 a 1 18 ]
-"16
-[v led_initialize@ret ret `uc  1 a 1 17 ]
-[s S24 . 1 `uc 1 port 1 0 :4:0 
-`uc 1 pin 1 0 :3:4 
-`uc 1 led_status 1 0 :1:7 
+"14
+[v relay_initialize@pin_opject pin_opject `S24  1 a 1 18 ]
+"10
+[v relay_initialize@ret ret `uc  1 a 1 17 ]
+[s S311 . 1 `uc 1 relay_port 1 0 :4:0 
+`uc 1 relay_pin 1 0 :3:4 
+`uc 1 relay_status 1 0 :1:7 
 ]
-"15
-[v led_initialize@led led `*.39CS24  1 p 2 14 ]
-"20
-[v led_initialize@F2837 F2837 `S28  1 s 1 F2837 ]
-"30
+"9
+[v relay_initialize@_relay _relay `*.39CS311  1 p 2 14 ]
+"13
+[v relay_initialize@F2831 F2831 `S24  1 s 1 F2831 ]
+"23
 } 0
 "119 E:\diploma\projects\MCAL_layer/GPIO/hal_gpio.c
 [v _gpio_pin_initialize gpio_pin_initialize `(uc  1 e 1 0 ]
 {
 "120
 [v gpio_pin_initialize@ret ret `uc  1 a 1 13 ]
-[s S28 . 1 `uc 1 port 1 0 :3:0 
+[s S24 . 1 `uc 1 port 1 0 :3:0 
 `uc 1 pin 1 0 :3:3 
 `uc 1 direction 1 0 :1:6 
 `uc 1 logic 1 0 :1:7 
 ]
 "119
-[v gpio_pin_initialize@_pin_config _pin_config `*.39CS28  1 p 2 10 ]
+[v gpio_pin_initialize@_pin_config _pin_config `*.39CS24  1 p 2 10 ]
 "129
 } 0
 "59
@@ -236,13 +272,13 @@ LED_ON 1
 {
 "60
 [v gpio_pin_write_logic@ret ret `uc  1 a 1 9 ]
-[s S28 . 1 `uc 1 port 1 0 :3:0 
+[s S24 . 1 `uc 1 port 1 0 :3:0 
 `uc 1 pin 1 0 :3:3 
 `uc 1 direction 1 0 :1:6 
 `uc 1 logic 1 0 :1:7 
 ]
 "59
-[v gpio_pin_write_logic@_pin_config _pin_config `*.39CS28  1 p 2 0 ]
+[v gpio_pin_write_logic@_pin_config _pin_config `*.39CS24  1 p 2 0 ]
 [v gpio_pin_write_logic@logic logic `E2757  1 p 1 2 ]
 "78
 } 0
@@ -251,12 +287,12 @@ LED_ON 1
 {
 "20
 [v gpio_pin_direction_intialize@ret ret `uc  1 a 1 8 ]
-[s S28 . 1 `uc 1 port 1 0 :3:0 
+[s S24 . 1 `uc 1 port 1 0 :3:0 
 `uc 1 pin 1 0 :3:3 
 `uc 1 direction 1 0 :1:6 
 `uc 1 logic 1 0 :1:7 
 ]
 "19
-[v gpio_pin_direction_intialize@_pin_config _pin_config `*.39CS28  1 p 2 0 ]
+[v gpio_pin_direction_intialize@_pin_config _pin_config `*.39CS24  1 p 2 0 ]
 "35
 } 0
