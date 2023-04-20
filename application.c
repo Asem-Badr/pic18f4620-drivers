@@ -8,57 +8,127 @@
 
 #include "application.h"
 
-button_t btn_high = {
-    .button_pin.port = PORTD_INDEX,
-    .button_pin.direction = GPIO_DIRECTION_INPUT,
-    .button_pin.logic = LOW,
-    .button_pin.pin = PIN0,
-    .button_connection = BUTTON_ACTIVE_HIGH,
-    .button_state = BUTTON_RELEASED
-};
-button_t btn_low = {
-    .button_pin.port = PORTD_INDEX,
-    .button_pin.direction = GPIO_DIRECTION_INPUT,
-    .button_pin.logic = HIGH,
-    .button_pin.pin = PIN1,
-    .button_connection = BUTTON_ACTIVE_LOW,
-    .button_state = BUTTON_RELEASED
+chr_lcd_4bit_t lcd_1 = {
+    .lcd_rs.port = PORTC_INDEX,
+    .lcd_rs.direction = GPIO_DIRECTION_OUTPUT,
+    .lcd_rs.pin = PIN0,
+    .lcd_rs.logic = LOW,
+    
+    .lcd_en.port = PORTC_INDEX,
+    .lcd_en.direction = GPIO_DIRECTION_OUTPUT,
+    .lcd_en.pin = PIN1,
+    .lcd_en.logic = LOW,
+    
+    .lcd_data[0].port = PORTC_INDEX,
+    .lcd_data[0].pin  = PIN2,
+    .lcd_data[0].direction = GPIO_DIRECTION_OUTPUT,
+    .lcd_data[0].logic = LOW,
+    
+    .lcd_data[1].port = PORTC_INDEX,
+    .lcd_data[1].pin  = PIN3,
+    .lcd_data[1].direction = GPIO_DIRECTION_OUTPUT,
+    .lcd_data[1].logic = LOW,
+    
+    .lcd_data[2].port = PORTC_INDEX,
+    .lcd_data[2].pin  = PIN4,
+    .lcd_data[2].direction = GPIO_DIRECTION_OUTPUT,
+    .lcd_data[2].logic = LOW,
+    
+    .lcd_data[3].port = PORTC_INDEX,
+    .lcd_data[3].pin  = PIN5,
+    .lcd_data[3].direction = GPIO_DIRECTION_OUTPUT,
+    .lcd_data[3].logic = LOW,
+    
 };
 
-led_t led_1 = {
-    .led_status = LOW,
-    .port = PORTC_INDEX,
-    .pin = PIN0
-};
-led_t led_2 = {
-    .led_status = LOW,
-    .port = PORTC_INDEX,
-    .pin = PIN1
-};
-relay_t relay_1 = {
-    .relay_port = PORTC_INDEX ,
-    .relay_pin = PIN0,
-    .relay_status = RELEY_OFF_STATUS
+chr_lcd_8bit_t lcd_2 = {
+    .lcd_rs.port = PORTC_INDEX,
+    .lcd_rs.direction = GPIO_DIRECTION_OUTPUT,
+    .lcd_rs.pin = PIN6,
+    .lcd_rs.logic = LOW,
+    
+    .lcd_en.port = PORTC_INDEX,
+    .lcd_en.direction = GPIO_DIRECTION_OUTPUT,
+    .lcd_en.pin = PIN7,
+    .lcd_en.logic = LOW,
+    
+    .lcd_data[0].port = PORTD_INDEX,
+    .lcd_data[0].pin  = PIN0,
+    .lcd_data[0].direction = GPIO_DIRECTION_OUTPUT,
+    .lcd_data[0].logic = LOW,
+    
+    .lcd_data[1].port = PORTD_INDEX,
+    .lcd_data[1].pin  = PIN1,
+    .lcd_data[1].direction = GPIO_DIRECTION_OUTPUT,
+    .lcd_data[1].logic = LOW,
+    
+    .lcd_data[2].port = PORTD_INDEX,
+    .lcd_data[2].pin  = PIN2,
+    .lcd_data[2].direction = GPIO_DIRECTION_OUTPUT,
+    .lcd_data[2].logic = LOW,
+    
+    .lcd_data[3].port = PORTD_INDEX,
+    .lcd_data[3].pin  = PIN3,
+    .lcd_data[3].direction = GPIO_DIRECTION_OUTPUT,
+    .lcd_data[3].logic = LOW,
+    
+    .lcd_data[4].port = PORTD_INDEX,
+    .lcd_data[4].pin  = PIN4,
+    .lcd_data[4].direction = GPIO_DIRECTION_OUTPUT,
+    .lcd_data[4].logic = LOW,
+    
+    .lcd_data[5].port = PORTD_INDEX,
+    .lcd_data[5].pin  = PIN5,
+    .lcd_data[5].direction = GPIO_DIRECTION_OUTPUT,
+    .lcd_data[5].logic = LOW,
+    
+    .lcd_data[6].port = PORTD_INDEX,
+    .lcd_data[6].pin  = PIN6,
+    .lcd_data[6].direction = GPIO_DIRECTION_OUTPUT,
+    .lcd_data[6].logic = LOW,
+    
+    .lcd_data[7].port = PORTD_INDEX,
+    .lcd_data[7].pin  = PIN7,
+    .lcd_data[7].direction = GPIO_DIRECTION_OUTPUT,
+    .lcd_data[7].logic = LOW,
+    
 };
 
 Std_ReturnType ret = E_NOT_OK;
-button_state_t button_high_state = BUTTON_RELEASED ;
-button_state_t button_low_state = BUTTON_RELEASED ;
-uint32 btn_high_valid = 0;
-int main() {
 
+uint8 customChar[] = {
+  0x0E,
+  0x0A,
+  0x11,
+  0x11,
+  0x11,
+  0x11,
+  0x1F,
+  0x00
+};
+int main() {
+    
     application_initialize();
+    /*ret = lcd_8bit_send_char_data(&lcd_2, 'A');
+    ret = lcd_8bit_send_string(&lcd_2 , "Ahmed");
+    ret = lcd_4bit_send_char_data(&lcd_1 , 'B');
+    ret = lcd_4bit_send_char_data_pos(&lcd_1,2,4,'A');
+    ret = lcd_4bit_send_string(&lcd_1,"asem");*/
+    uint8 lcd_counter = ZERO_INIT;
+    uint8 lcd_counter_txt [4];
+    convert_byte_to_string(245,lcd_counter_txt);
+    ret = lcd_4bit_send_string(&lcd_1,lcd_counter_txt);
+    
+    ret = lcd_4bit_send_custom_char(&lcd_1,2,2,customChar,0);
+    
     while (1) {
-        ret = relay_turn_on(&relay_1);
-        __delay_ms(250);
-        ret = relay_turn_off(&relay_1);
-        __delay_ms(250);
+        ret = lcd_8bit_send_custome_char(&lcd_2,3,3,customChar,0);
         
     }
-
     return (EXIT_SUCCESS);
 }
 
 void application_initialize(void) {
-    ret = relay_initialize(&relay_1);
+    ret = lcd_4bit_initialize(&lcd_1);
+    ret = lcd_8bit_initialize(&lcd_2);
 }

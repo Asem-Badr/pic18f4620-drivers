@@ -10,6 +10,8 @@
 /* Section : Includes*/
 #include "std_libraries.h"
 #include "compiler.h" 
+#include <string.h>
+#include <stdint.h>
 
 
 /* Section : Macro Declarations */
@@ -24,6 +26,7 @@
 #define E_OK        (Std_ReturnType)0x01
 #define E_NOT_OK    (Std_ReturnType)0x00
 
+#define ZERO_INIT   (uint8)0x00
 /* Section: Macro functions Declarations */
 
 /* Section: Data Type Declarations */
@@ -35,7 +38,6 @@ typedef signed short sint16;
 typedef signed int sint32;
 
 typedef uint8 Std_ReturnType;
-
 
 
 /* Section: Function Declarations*/
