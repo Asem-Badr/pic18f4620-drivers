@@ -1,4 +1,6 @@
 nbproject
 dist
 debug
-built/default/production
+build/default/production
+.vscode
+build

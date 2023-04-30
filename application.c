@@ -94,6 +94,27 @@ chr_lcd_8bit_t lcd_2 = {
     
 };
 
+dc_motor_t dc_motor_1 = {
+    .dc_motor[0].port = PORTC_INDEX,
+    .dc_motor[0].pin = PIN0,
+    .dc_motor[0].logic = DC_MOTOR_OFF_STATUS,
+    .dc_motor[0].direction = GPIO_DIRECTION_OUTPUT,
+    .dc_motor[1].port = PORTC_INDEX,
+    .dc_motor[1].pin = PIN1,
+    .dc_motor[1].logic = DC_MOTOR_OFF_STATUS,
+    .dc_motor[1].direction = GPIO_DIRECTION_OUTPUT
+};
+dc_motor_t dc_motor_2 = {
+    .dc_motor[0].port = PORTC_INDEX,
+    .dc_motor[0].pin = PIN2,
+    .dc_motor[0].logic = DC_MOTOR_OFF_STATUS,
+    .dc_motor[0].direction = GPIO_DIRECTION_OUTPUT,
+    .dc_motor[1].port = PORTC_INDEX,
+    .dc_motor[1].pin = PIN3,
+    .dc_motor[1].logic = DC_MOTOR_OFF_STATUS,
+    .dc_motor[1].direction = GPIO_DIRECTION_OUTPUT
+};
+
 Std_ReturnType ret = E_NOT_OK;
 
 uint8 customChar[] = {
@@ -113,22 +134,35 @@ int main() {
     ret = lcd_8bit_send_string(&lcd_2 , "Ahmed");
     ret = lcd_4bit_send_char_data(&lcd_1 , 'B');
     ret = lcd_4bit_send_char_data_pos(&lcd_1,2,4,'A');
-    ret = lcd_4bit_send_string(&lcd_1,"asem");*/
+    ret = lcd_4bit_send_string(&lcd_1,"asem");
     uint8 lcd_counter = ZERO_INIT;
     uint8 lcd_counter_txt [4];
     convert_byte_to_string(245,lcd_counter_txt);
     ret = lcd_4bit_send_string(&lcd_1,lcd_counter_txt);
     
-    ret = lcd_4bit_send_custom_char(&lcd_1,2,2,customChar,0);
+    ret = lcd_4bit_send_custom_char(&lcd_1,2,2,customChar,0);*/
     
     while (1) {
-        ret = lcd_8bit_send_custome_char(&lcd_2,3,3,customChar,0);
-        
+        //ret = lcd_8bit_send_custome_char(&lcd_2,3,3,customChar,0);
+        ret = dc_motor_move_right(&dc_motor_1);
+        __delay_ms(500);
+        ret = dc_motor_move_left(&dc_motor_1);
+        __delay_ms(500);
+        ret = dc_motor_stop(&dc_motor_1);
+        __delay_ms(500);
+        ret = dc_motor_move_right(&dc_motor_2);
+        __delay_ms(500);
+        ret = dc_motor_move_left(&dc_motor_2);
+        __delay_ms(500);
+        ret = dc_motor_stop(&dc_motor_2);
+        __delay_ms(500);
     }
     return (EXIT_SUCCESS);
 }
 
 void application_initialize(void) {
-    ret = lcd_4bit_initialize(&lcd_1);
-    ret = lcd_8bit_initialize(&lcd_2);
+    /*ret = lcd_4bit_initialize(&lcd_1);
+    ret = lcd_8bit_initialize(&lcd_2);*/
+    ret = dc_motor_initialize(&dc_motor_1);
+    ret = dc_motor_initialize(&dc_motor_2);
 }

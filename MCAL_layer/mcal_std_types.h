@@ -10,8 +10,7 @@
 /* Section : Includes*/
 #include "std_libraries.h"
 #include "compiler.h" 
-#include <string.h>
-#include <stdint.h>
+
 
 
 /* Section : Macro Declarations */
